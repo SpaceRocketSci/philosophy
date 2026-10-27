@@ -1,0 +1,52 @@
+{
+  "name": "pages-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React CMS with local accounts, approval workflow and GitHub Pages publishing.",
+  "scripts": {
+    "start": "node src/server.js",
+    "api:dev": "node --watch src/server.js",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "bcryptjs": "^2.4.3",
+    "connect-sqlite3": "^0.9.16",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "multer": "^1.4.5-lts.1",
+    "sanitize-html": "^2.17.0"
+  },
+  "devDependencies": {
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "@tiptap/core": "^3.19.0",
+    "@tiptap/extension-color": "^3.19.0",
+    "@tiptap/extension-highlight": "^3.19.0",
+    "@tiptap/extension-image": "^3.19.0",
+    "@tiptap/extension-placeholder": "^3.19.0",
+    "@tiptap/extension-subscript": "^3.19.0",
+    "@tiptap/extension-superscript": "^3.19.0",
+    "@tiptap/extension-table": "^3.19.0",
+    "@tiptap/extension-task-item": "^3.19.0",
+    "@tiptap/extension-task-list": "^3.19.0",
+    "@tiptap/extension-text-align": "^3.19.0",
+    "@tiptap/extension-text-style": "^3.19.0",
+    "@tiptap/react": "^3.19.0",
+    "@tiptap/starter-kit": "^3.19.0",
+    "@uiw/react-codemirror": "^4.23.10",
+    "@vitejs/plugin-react": "^4.3.4",
+    "motion": "^12.23.24",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.0.7"
+  }
+}
