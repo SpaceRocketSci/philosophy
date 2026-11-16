@@ -16,6 +16,10 @@ GitHub Pages е статичен хостинг: затова Node API-то и �
 
 Разположи Node.js 20+ сървъра на хостинг, който дава публичен HTTPS адрес и постоянен диск/volume. Запази `data/` и `uploads/` между рестартиранията. Клонирай репозиторията и изпълни `npm install --omit=dev`. Задай environment variables по `.env.example` в control panel-а на хостинга; не качвай `.env` или GitHub token в репозитория.
 
+За Render в репозиторията има `render.yaml` Blueprint. При създаването на Blueprint Render ще поиска `OWNER_EMAIL`, `OWNER_PASSWORD` и `GITHUB_TOKEN`, а ще генерира `SESSION_SECRET` и `API_SECRET`. След разгръщане използвай получения `onrender.com` адрес като `VITE_API_URL` в GitHub repository variables. Health check-ът е `/healthz`, а CORS origin-ът по подразбиране е `https://spacerocketsci.github.io`.
+
+**Важно за Render Free:** локалният диск не е постоянен. Докато не бъде добавено криптираното архивиране към отделното private data репо, не използвай този API за реални профили или съдържание — SQLite базата и качените файлове могат да се загубят при рестарт или ново разгръщане.
+
 Нужен е fine-grained personal access token, ограничен до репозитория `SpaceRocketSci/philosophy`, с `Contents: write`. Token-ът остава само при API сървъра; администраторите и редакторите на CMS не го използват. GitHub изисква `Contents: write`, за да създава или обновява файла с одобреното съдържание. [GitHub Contents API](https://docs.github.com/en/rest/repos/contents)
 
 Задай `CMS_ORIGINS=https://spacerocketsci.github.io` (origin-ът без `/philosophy`) или точния origin на custom domain. В production зад reverse proxy използвай HTTPS. Силно и различно `SESSION_SECRET`, `API_SECRET` и `OWNER_PASSWORD` са задължителни. `OWNER_EMAIL` трябва да е имейл, който GitHub приема като committer.

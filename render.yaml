@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: philosophy-cms-api
+    runtime: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: API_SECRET
+        generateValue: true
+      - key: OWNER_NAME
+        value: Site owner
+      - key: OWNER_EMAIL
+        sync: false
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: CMS_ORIGINS
+        value: https://spacerocketsci.github.io
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_REPOSITORY
+        value: SpaceRocketSci/philosophy
+      - key: GITHUB_BRANCH
+        value: main
